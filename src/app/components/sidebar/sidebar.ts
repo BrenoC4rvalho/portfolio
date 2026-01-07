@@ -16,10 +16,10 @@ import { Logo } from "../logo/logo";
 export class Sidebar {
 
   menuItems = [
-    { label: 'Home',      link: '/',          icon: 'heroCommandLine', exact: true },
-    { label: 'Projetos',  link: '/projetos',  icon: 'heroFolder',      exact: false },
-    { label: 'Sobre Mim', link: '/sobre',     icon: 'heroUser',        exact: false },
-    { label: 'Contato',   link: '/contato',   icon: 'heroEnvelope',    exact: false },
+    { label: 'Home',      link: '',          icon: 'heroCommandLine', exact: true },
+    { label: 'Projetos',  link: 'projetos',  icon: 'heroFolder',      exact: false },
+    { label: 'Sobre Mim', link: 'sobre',     icon: 'heroUser',        exact: false },
+    { label: 'Contato',   link: 'contato',   icon: 'heroEnvelope',    exact: false },
   ];
 
 }
