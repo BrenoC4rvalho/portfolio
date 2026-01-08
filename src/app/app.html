@@ -1,13 +1,24 @@
 <div class="relative h-screen">
 
+  @if (sidebarOpen()) {
+    <div
+      class="fixed inset-0 bg-black/50 z-40 lg:hidden"
+      (click)="closeSidebar()">
+    </div>
+  }
+
+
   <!-- Sidebar -->
-  <aside class="fixed top-0 left-0 h-screen w-20 z-50">
-    <app-sidebar></app-sidebar>
+  <aside
+    class="fixed top-0 h-screen z-50 w-64 lg:w-20 bg-gray-800 transition-all duration-300 -left-64 lg:left-0"
+    [class.left-0]="sidebarOpen()"
+  >
+    <app-sidebar (click)="closeSidebar()"></app-sidebar>
   </aside>
 
-  <div class="ml-20 flex flex-col h-screen bg-neutral-900">
+  <div class="flex flex-col h-screen bg-neutral-900 transition-all duration-300 lg:ml-20">
 
-    <app-header></app-header>
+    <app-header (toggleSidebar)="toggleSidebar()"></app-header>
 
     <main class="flex-1 bg-neutral-800">
       <router-outlet></router-outlet>
