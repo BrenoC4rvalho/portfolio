@@ -40,7 +40,9 @@ app.use(
  */
 app.use((req, res, next) => {
   angularApp
-    .handle(req)
+    .handle(req, {
+      url: req.originalUrl
+    })
     .then((response) =>
       response ? writeResponseToNodeResponse(response, res) : next(),
     )
