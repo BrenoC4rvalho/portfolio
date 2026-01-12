@@ -6,8 +6,14 @@ import {
 } from '@angular/ssr/node';
 import express from 'express';
 import { join } from 'node:path';
+import { cwd } from 'node:process';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const browserDistFolder = join(
+  cwd(),
+  'dist',
+  'frontend',
+  'browser'
+);
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
