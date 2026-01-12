@@ -40,9 +40,7 @@ app.use(
  */
 app.use((req, res, next) => {
   angularApp
-    .handle(req, {
-      url: req.originalUrl
-    })
+    .handle(req)
     .then((response) =>
       response ? writeResponseToNodeResponse(response, res) : next(),
     )
@@ -53,9 +51,8 @@ app.use((req, res, next) => {
  * Start the server if this module is the main entry point, or it is ran via PM2.
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
  */
-
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.
  */
-export const reqHandler = createNodeRequestHandler(app);
+export default createNodeRequestHandler(app);
 
