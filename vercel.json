@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "dist/frontend/server/server.mjs": {
-      "runtime": "@vercel/node@20"
+      "runtime": "@vercel/node@24"
     }
   },
   "routes": [
