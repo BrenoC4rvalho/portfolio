@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:ssr",
+  "buildCommand": "npm run build",
   "builds": [
     {
-      "src": "dist/frontend/server/server.mjs",
+      "src": "src/server.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "dist/frontend/server/server.mjs"
+      "dest": "src/server.ts"
     }
   ]
 }
